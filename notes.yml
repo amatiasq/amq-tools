@@ -1,0 +1,17 @@
+- Logger
+  + If single line is used and the function crashes it should print anyway without try-catch
+
+- Stream
+
+- Timer
+  + BUG If we start the timer, and then cancel it when we schedule it once it will start looping.
+
+- Utils
+  - Document and review new utils
+    - print-jsx
+    - download-url
+  - Create more subfolders?
+    - string
+    - array
+    - function
+    - react

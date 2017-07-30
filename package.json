@@ -1,0 +1,61 @@
+{
+  "name": "amq-tools",
+  "version": "0.0.1",
+  "description": "Set of Javascript/Typescript utilities",
+  "main": "dist/index.js",
+  "directories": {
+    "test": "test"
+  },
+  "jest": {
+    "mapCoverage": true,
+    "moduleFileExtensions": [
+      "ts",
+      "js"
+    ],
+    "testRegex": "\\.spec\\.ts$",
+    "testPathIgnorePatterns": [
+      ".bakup"
+    ],
+    "transform": {
+      "\\.ts$": "<rootDir>/node_modules/ts-jest/preprocessor.js"
+    }
+  },
+  "scripts": {
+    "start": "webpack-dev-server",
+    "build": "rm -r dist; rollup -c config/rollup.all.js",
+    "build-watch": "rollup -c config/rollup.all.js -w",
+    "test": "jest",
+    "test-watch": "jest --watch",
+    "test-coverage": "jest --coverage",
+    "upload-coverage": "cat ./coverage/lcov.info | coveralls",
+    "lint": "tslint -c tslint.json --type-check --project tsconfig.json 'src/**/*.ts'",
+    "lint-fix": "tslint -c tslint.json --type-check --project tsconfig.json --fix 'src/**/*.ts'",
+    "deploy": "npm run build && ./scripts/deploy.sh"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/amatiasq/amq-tools.git"
+  },
+  "author": "A. Matías Quezada <amatiasq@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/amatiasq/amq-tools/issues"
+  },
+  "devDependencies": {
+    "@types/jest": "^20.0.5",
+    "coveralls": "^2.13.1",
+    "jest": "^20.0.4",
+    "rollup": "^0.45.1",
+    "rollup-plugin-typescript": "^0.8.1",
+    "rollup-plugin-uglify": "^2.0.1",
+    "rollup-watch": "^4.3.1",
+    "ts-jest": "^20.0.7",
+    "ts-loader": "^2.2.2",
+    "tslint": "^5.5.0",
+    "tslint-language-service": "^0.9.6",
+    "typescript": "^2.4.1",
+    "webpack": "^3.2.0",
+    "webpack-dev-server": "^2.5.1"
+  },
+  "homepage": "https://github.com/amatiasq/amq-tools#readme"
+}
