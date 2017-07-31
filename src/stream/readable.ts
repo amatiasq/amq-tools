@@ -138,34 +138,36 @@ function noop() {
 }
 
 
-type IteratorBase<T, TIndex, TCollection, TOutput> = (value: T, index: TIndex, collection: TCollection) => TOutput;
-type ReadableMapper<TInput, TOutput> = IteratorBase<TInput, number, ReadableStream<TInput>, TOutput>;
-type ReadableIterator<T> = ReadableMapper<T, void>;
+export type IteratorBase<T, TIndex, TCollection, TOutput> =
+  (value: T, index: TIndex, collection: TCollection) => TOutput;
 
-type CancelSubscription = StreamSubscription | (() => void);
-type ReadableStreamOnNext<T> = (value: T) => void;
-type ReadableStreamOnNextCancellable<T> = (value: T) => CancelSubscription;
-type ReadableStreamOnError = (error: Error) => void;
-type ReadableStreamOnComplete = () => void;
+export type ReadableMapper<TInput, TOutput> = IteratorBase<TInput, number, ReadableStream<TInput>, TOutput>;
+export type ReadableIterator<T> = ReadableMapper<T, void>;
 
-type ReadableStreamSource<T> = (
+export type CancelSubscription = StreamSubscription | (() => void);
+export type ReadableStreamOnNext<T> = (value: T) => void;
+export type ReadableStreamOnNextCancellable<T> = (value: T) => CancelSubscription;
+export type ReadableStreamOnError = (error: Error) => void;
+export type ReadableStreamOnComplete = () => void;
+
+export type ReadableStreamSource<T> = (
   push: ReadableStreamOnNext<T> | ReadableStreamOnNextCancellable<T>,
   error?: ReadableStreamOnError,
   complete?: ReadableStreamOnComplete,
 ) => CancelSubscription | void;
 
 
-interface IIterable<T> {
+export interface IIterable<T> {
   forEach(iterator: (value: T) => void): void;
 }
 
-type IEventEmitter<T> = IEventEmitterOn<T> | IEventEmitterAdd<T>;
+export type IEventEmitter<T> = IEventEmitterOn<T> | IEventEmitterAdd<T>;
 
-interface IEventEmitterOn<T> {
+export interface IEventEmitterOn<T> {
   on(signal: string, listener: (event: T) => void): void;
 }
 
-interface IEventEmitterAdd<T> {
+export interface IEventEmitterAdd<T> {
   addEventListener(signal: string, listener: (event: T) => void): void;
 }
 

@@ -32,4 +32,4 @@ export default function syncVersion<T>(fn: (...args: any[]) => Promise<T>): ICac
 }
 
 
-type ICached<T extends () => Promise<U>, U> = T & { cached(): U };
+export type ICached<T extends () => Promise<U>, U> = T & { cached(): U };

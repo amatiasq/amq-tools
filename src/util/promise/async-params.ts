@@ -28,4 +28,4 @@ function isPromise<T>(value: any): value is Promise<T> {
 }
 
 
-type Value<T> = Promise<T> | T;
+export type Value<T> = Promise<T> | T;

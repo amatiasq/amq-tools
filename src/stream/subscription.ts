@@ -64,15 +64,15 @@ function noop() {
 }
 
 
-type PromiseExecutor<T> = (
+export type PromiseExecutor<T> = (
   resolve: PromiseResolver<T>,
   reject: PromiseRejector,
 ) => StreamSubscription | OnCancelCallback | void;
 
-type PromiseResolver<T> = (value?: T | PromiseLike<T>) => void;
-type PromiseRejector = (value?: Error | PromiseLike<Error>) => void;
+export type PromiseResolver<T> = (value?: T | PromiseLike<T>) => void;
+export type PromiseRejector = (value?: Error | PromiseLike<Error>) => void;
 
-type PromiseListener<TInput, TOutput> = ((value: TInput) => TOutput | PromiseLike<TOutput>) | undefined | null;
+export type PromiseListener<TInput, TOutput> = ((value: TInput) => TOutput | PromiseLike<TOutput>) | undefined | null;
 
 
-type OnCancelCallback = () => void;
+export type OnCancelCallback = () => void;

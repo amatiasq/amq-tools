@@ -23,4 +23,4 @@ export default function curry<TArgs, TOut>(fn: (...args: TArgs[]) => TOut, lengt
 }
 
 
-type Currified<TArgs, TOut> = (...args: TArgs[]) => Currified<TArgs, TOut> | TOut;
+export type Currified<TArgs, TOut> = (...args: TArgs[]) => Currified<TArgs, TOut> | TOut;
