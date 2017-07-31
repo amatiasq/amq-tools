@@ -47,10 +47,7 @@ function build(params) {
   const rest = omit(params, [ 'tsconfig' ]);
 
   const plugins = [
-    tsLoader(Object.assign({}, tsconfig, {
-      module: 'es2015',
-      typescript
-    })),
+    tsLoader(Object.assign({}, tsconfig, {typescript})),
   ];
 
   return Object.assign({}, rest, { plugins });

@@ -11,7 +11,7 @@
     "stripInternal": true,
     "noImplicitAny": true,
 
-    "module": "none",
+    "module": "es2015",
     "target": "es6",
     "lib": ["dom", "es2015"],
     "plugins": [
