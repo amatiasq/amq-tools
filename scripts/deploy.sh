@@ -5,6 +5,8 @@ name=$(./scripts/read-json.js package.json name)
 version=$(./scripts/read-json.js package.json version)
 
 ./scripts/generate-packages.js
+cp README.md dist/cjs/
+cp README.md dist/es6/
 
 echo ''
 echo 'Publishing CommonJS...'
