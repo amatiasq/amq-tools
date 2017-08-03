@@ -1,16 +1,22 @@
 /* tslint:disable:no-any ban-types no-misused-new */
 import getGlobal from '../util/get-global';
 import { IConstructor } from './constructor';
-import FakeConsole from './fake-console';
+import { IFakeConsole } from './fake-console';
 
 
 const root = getGlobal();
+const isLogged = Symbol();
 const omitList = new WeakSet();
 
 
 export interface ILoggerOptions {
   singleLine?: boolean;
   indentation?: string;
+}
+
+
+export interface ILoggerParams extends ILoggerOptions {
+  createConsole(options: ILoggerOptions): IFakeConsole;
 }
 
 
@@ -38,10 +44,14 @@ export interface ILogger extends IConstructor<ILogger> {
 
 
 export default function Logger({
+  createConsole,
   singleLine = false,
   indentation = '->',
-} = {}) {
+}: ILoggerParams) {
   const self = log as any as ILogger;
+
+  if (typeof createConsole !== 'function')
+    throw new Error('Logger `createConsole` parameter is required');
 
   return Object.assign(self, {
     constructor: Logger,
@@ -67,20 +77,24 @@ export default function Logger({
   }
 
 
-  function logFunction(fn: Function, prefix = fn.name) {
+  function logFunction(fn: Function, prefix = fn.name || 'anonymous') {
+    if ((fn as any)[isLogged])
+      return fn;
+
     return function(...args: any[]) {
       const toLog = args.reduce((output, item, index) => {
         if (index !== 0)
           output.push(',');
 
-        output.push(item);
+        output.push(self.cleanValue(item));
         return output;
       }, []);
 
-      if (!singleLine)
+      if (!singleLine) {
         console.log(prefix, '(', ...toLog, ')');
+      }
 
-      const fake = new FakeConsole(window.console, singleLine, indentation);
+      const fake = createConsole({singleLine, indentation});
       (window as any).console = fake;
       let result;
 
@@ -106,11 +120,11 @@ export default function Logger({
 
       if (singleLine) {
         console.log(prefix, '(', ...toLog, ') >', self.cleanValue(result));
-        fake.flush();
       } else {
         console.log(prefix, '<', self.cleanValue(result));
       }
 
+      fake.flush();
       return result;
     };
   }
@@ -145,6 +159,11 @@ export default function Logger({
       const isFunction = typeof value === 'function';
       const shouldOmit = omitList.has(descriptor.value);
 
+      if (!descriptor.configurable) {
+        console.warn(`Can't hook readonly property ${name}.${key}`);
+        return;
+      }
+
       descriptors[key] =  isConstructor || !isFunction || shouldOmit ?
         descriptor :
         internal(name, key, descriptor);
@@ -170,6 +189,7 @@ export default function Logger({
 
   function set(config: ILoggerOptions) {
     return Logger(Object.assign({
+      createConsole,
       singleLine,
       indentation,
     }, config));

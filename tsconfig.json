@@ -6,7 +6,7 @@
     "experimentalDecorators": true,
     "alwaysStrict": true,
     "declaration": true,
-    "forceConsistentCasingInFileNames": false,
+    "forceConsistentCasingInFileNames": true,
     "sourceMap": true,
     "stripInternal": true,
     "noImplicitAny": true,

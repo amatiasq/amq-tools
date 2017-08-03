@@ -10,8 +10,14 @@ interface IConsoleEntry {
 }
 
 
+export interface IFakeConsole {
+  flush(): this;
+  restore(): this;
+}
+
+
 const root = getGlobal();
-const wrappedMethods = [
+export const wrappedMethods = [
   'assert',
   'dir',
   'error',
@@ -28,7 +34,7 @@ const realConsole = root.console as Console;
 // tslint:disable-next-line:variable-name
 const ConsoleClass = realConsole.constructor as IConstructor<Console>;
 
-export default class FakeConsole {
+export default class FakeConsole implements IFakeConsole {
 
   private queue: IConsoleEntry[] = [];
 

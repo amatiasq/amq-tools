@@ -1,5 +1,7 @@
 - Logger
   + If single line is used and the function crashes it should print anyway without try-catch
+  + Avoid trying to hook `{ configurable: false }` descriptors
+  + Avoid hooking the same function twice
 
 - Stream
 
@@ -10,6 +12,7 @@
   - Document and review new utils
     - print-jsx
     - download-url
+    - CancellablePromise
   - Create more subfolders?
     - string
     - array
