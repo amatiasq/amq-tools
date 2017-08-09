@@ -1,4 +1,7 @@
 /**
+ * Copyright (c) 2017-present A. Matías Quezada <amatiasq@gmail.com>
+ */
+/**
  * Modifies an A element to download a canvas' content as a PNG image.
  *
  * @param {HTMLAnchorElement} link Element to fire the download.

@@ -1,4 +1,7 @@
 /**
+ * Copyright (c) 2017-present A. Matías Quezada <amatiasq@gmail.com>
+ */
+/**
  * Calculates the space closest to the middle of the name and splits the name there.
  * Returns a object with { first, last }.
  *

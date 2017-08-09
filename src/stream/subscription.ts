@@ -1,3 +1,6 @@
+/**
+ * Copyright (c) 2017-present A. Matías Quezada <amatiasq@gmail.com>
+ */
 // Fuck this shit
 // tslint:disable-next-line:no-any
 export default class StreamSubscription<T = any> extends Promise<T> {

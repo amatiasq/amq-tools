@@ -1,4 +1,7 @@
 /**
+ * Copyright (c) 2017-present A. Matías Quezada <amatiasq@gmail.com>
+ */
+/**
  * Prevents a promise function to be called more than once while it's being
  *   executed asynchronously.
  * It will invoke the original function the first time it's called.

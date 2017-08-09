@@ -1,3 +1,6 @@
+/**
+ * Copyright (c) 2017-present A. Matías Quezada <amatiasq@gmail.com>
+ */
 import { IConstructor } from './constructor';
 import Logger from './logger';
 import FakeConsole, { IFakeConsole } from './fake-console';

@@ -1,4 +1,7 @@
 /**
+ * Copyright (c) 2017-present A. Matías Quezada <amatiasq@gmail.com>
+ */
+/**
  * Returns the global object for this environment.
  */
 export default function getGlobal() {

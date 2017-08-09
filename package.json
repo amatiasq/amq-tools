@@ -30,6 +30,7 @@
     "upload-coverage": "cat ./coverage/lcov.info | coveralls",
     "lint": "tslint -c tslint.json --type-check --project tsconfig.json 'src/**/*.ts'",
     "lint-fix": "tslint -c tslint.json --type-check --project tsconfig.json --fix 'src/**/*.ts'",
+    "copyright": "./scripts/copyright.js --extension ts src",
     "deploy": "npm run build && ./scripts/deploy.sh"
   },
   "repository": {

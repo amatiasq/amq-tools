@@ -1,4 +1,7 @@
 /**
+ * Copyright (c) 2017-present A. Matías Quezada <amatiasq@gmail.com>
+ */
+/**
  * Adds and removes properties from an object.
  * Passed value is not modified, a new object is returned.
  * The returned object will have it's properties sorted aphabetically.

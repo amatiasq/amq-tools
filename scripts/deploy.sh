@@ -4,9 +4,10 @@ root=$(pwd)
 name=$(./scripts/read-json.js package.json name)
 version=$(./scripts/read-json.js package.json version)
 
+./scripts/copyright.js --extension js dist
 ./scripts/generate-packages.js
-cp README.md dist/cjs/
-cp README.md dist/es6/
+cp README.md LICENSE dist/cjs/
+cp README.md LICENSE dist/es6/
 
 echo ''
 echo 'Publishing CommonJS...'

@@ -1,4 +1,7 @@
 /**
+ * Copyright (c) 2017-present A. Matías Quezada <amatiasq@gmail.com>
+ */
+/**
  * Polyfill for [Node8 `util.promisify()`](http://2ality.com/2017/05/util-promisify.html)
  * Recives a function and returns a function that when called will add a extra callback parameter
  * The output function will return a promise binded to the callback parameter.

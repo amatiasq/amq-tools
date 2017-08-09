@@ -1,4 +1,7 @@
 /**
+ * Copyright (c) 2017-present A. Matías Quezada <amatiasq@gmail.com>
+ */
+/**
  * Decorates a function to not be executed until all promise parameters are fulfilled.
  *
  * @example

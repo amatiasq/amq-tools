@@ -1,4 +1,7 @@
 /**
+ * Copyright (c) 2017-present A. Matías Quezada <amatiasq@gmail.com>
+ */
+/**
  * Decorates a method to allow only the last call to be fulfilled.
  * This will prevent race conditions where previous calls being fullfilled after
  *   the last call will overwrite the output.

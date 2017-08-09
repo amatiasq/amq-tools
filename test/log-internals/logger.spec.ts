@@ -298,7 +298,16 @@ describe('log#Logger class', () => {
       });
 
 
-      it('should clean the returned value when logging it');
+      it('should clean the returned value when logging it', () => {
+        const log = makeLogger();
+        const result = 453;
+        const sut = log.function(() => result);
+
+        log.cleanValue = () => 'potato';
+        sut();
+
+        expect(fake.log).toHaveBeenCalledWith('anonymous', '<', 'potato');
+      });
     });
   });
 

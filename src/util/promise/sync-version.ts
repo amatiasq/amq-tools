@@ -1,4 +1,7 @@
 /**
+ * Copyright (c) 2017-present A. Matías Quezada <amatiasq@gmail.com>
+ */
+/**
  * Decorates a promise-returning-function to cache the last returned value.
  * The returned function will have a `cached` method which will return the
  *   value used to fulfill the last successful call.

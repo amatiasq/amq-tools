@@ -1,4 +1,7 @@
 /**
+ * Copyright (c) 2017-present A. Matías Quezada <amatiasq@gmail.com>
+ */
+/**
  * Decorates a function to not be executed until all required parameters are passed. Even on different calls.
  * It uses functions `.length` property to detect the required arguments count if length is not passed.
  *

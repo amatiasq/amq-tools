@@ -1,4 +1,7 @@
 /**
+ * Copyright (c) 2017-present A. Matías Quezada <amatiasq@gmail.com>
+ */
+/**
  * Extends an object with another one combining them whenever it's possible.
  * If both objects (or it's children) have an array on the same property those will be concatenated.
  * If both objects (or it's children) have an object on the same property those will be merged.

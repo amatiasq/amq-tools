@@ -1,4 +1,7 @@
 /**
+ * Copyright (c) 2017-present A. Matías Quezada <amatiasq@gmail.com>
+ */
+/**
  * A replacement for JSON.stringify.
  * In case you want to stringify a JSON but keep single-element arrays in a single line.
  * Only valid values in the object are valid JSON values. Passing different values will have unexpected result.

@@ -2,6 +2,8 @@
   + If single line is used and the function crashes it should print anyway without try-catch
   + Avoid trying to hook `{ configurable: false }` descriptors
   + Avoid hooking the same function twice
+  - Log react component name instead of Symbol(react.element)
+  - Color logged output?
 
 - Stream
 

@@ -1,3 +1,6 @@
+/**
+ * Copyright (c) 2017-present A. Matías Quezada <amatiasq@gmail.com>
+ */
 import BaseTimer, { TimerCallback } from './base-timer';
 
 

@@ -1,3 +1,6 @@
+/**
+ * Copyright (c) 2017-present A. Matías Quezada <amatiasq@gmail.com>
+ */
 import Timer from '../timer/index';
 import StreamSubscription from './subscription';
 import { duckType } from './utils';

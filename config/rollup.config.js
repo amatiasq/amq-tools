@@ -1,6 +1,7 @@
 import fs from 'fs';
 import {sync as glob} from 'glob';
 import path from 'path';
+import {promisify} from 'util';
 import tsLoader from 'rollup-plugin-typescript';
 import typescript from 'typescript';
 import {version} from '../package.json';
@@ -73,16 +74,4 @@ function omit(object, keys) {
   });
 
   return result;
-}
-
-
-function promisify(fn) {
-  return (...args) => {
-    return new Promise((resolve, reject) => {
-      fn(...args, (error, result) => {
-        if (error) reject(error);
-        else resolve(result);
-      });
-    });
-  };
 }

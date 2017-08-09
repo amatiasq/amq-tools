@@ -1,3 +1,6 @@
+/**
+ * Copyright (c) 2017-present A. Matías Quezada <amatiasq@gmail.com>
+ */
 export default class CancellablePromise<T> extends Promise<T> {
 
   protected _cancel: CancellableExecutor;

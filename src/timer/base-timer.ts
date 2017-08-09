@@ -1,3 +1,6 @@
+/**
+ * Copyright (c) 2017-present A. Matías Quezada <amatiasq@gmail.com>
+ */
 export default abstract class BaseTimer<T> {
 
   protected _domId: number = null;

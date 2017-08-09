@@ -1,3 +1,6 @@
+/**
+ * Copyright (c) 2017-present A. Matías Quezada <amatiasq@gmail.com>
+ */
 /* tslint:disable:no-any ban-types no-misused-new */
 import getGlobal from '../util/get-global';
 import { IConstructor } from './constructor';
