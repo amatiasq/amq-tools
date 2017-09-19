@@ -8,19 +8,25 @@ const keys = [ "name", "version", "description", "repository", "author", "licen
 const cjs = pick(pkg, keys);
 const es6 = pick(pkg, keys);
 
-es6.name = pkg.name + '-es6';
+cjs.name = pkg.name + '-cjs';
 
-fs.writeFileSync(path.join(__dirname, '../dist/cjs/package.json'), JSON.stringify(cjs, null, 2));
-fs.writeFileSync(path.join(__dirname, '../dist/es6/package.json'), JSON.stringify(es6, null, 2));
+write('../dist/cjs/package.json', cjs);
+write('../dist/es6/package.json', es6);
+
+
+function write(relativePath, content) {
+  fs.writeFileSync(path.join(__dirname, relativePath), JSON.stringify(content, null, 2));
+}
 
 
 function pick(object, keys) {
   const result = {};
 
-  Object
-    .keys(object)
-    .filter(key => keys.indexOf(key) !== -1)
-    .forEach(key => result[key] = object[key]);
+  for (const key of Object.keys(object)) {
+    if (keys.includes(key)) {
+      result[key] = object[key];
+    }
+  }
 
   return result;
 }
