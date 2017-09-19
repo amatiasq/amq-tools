@@ -1,6 +1,5 @@
 {
   "name": "amq-tools",
-  "version": "0.0.2",
   "description": "Set of Javascript/Typescript utilities",
   "main": "dist/index.js",
   "directories": {
@@ -31,11 +30,12 @@
     "lint": "tslint -c tslint.json --type-check --project tsconfig.json 'src/**/*.ts'",
     "lint-fix": "tslint -c tslint.json --type-check --project tsconfig.json --fix 'src/**/*.ts'",
     "copyright": "./scripts/copyright.js --extension ts src",
-    "deploy": "npm run build && ./scripts/deploy.sh"
+    "deploy": "npm run build && ./scripts/deploy.sh",
+    "semantic-release": "semantic-release pre && ./scripts/deploy.sh && semantic-release post"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/amatiasq/amq-tools.git"
+    "url": "https://github.com/amatiasq/amq-tools.git"
   },
   "author": "A. Matías Quezada <amatiasq@gmail.com>",
   "license": "MIT",
@@ -56,7 +56,8 @@
     "tslint-language-service": "^0.9.6",
     "typescript": "^2.4.1",
     "webpack": "^3.2.0",
-    "webpack-dev-server": "^2.5.1"
+    "webpack-dev-server": "^2.5.1",
+    "semantic-release": "^8.0.0"
   },
   "homepage": "https://github.com/amatiasq/amq-tools#readme"
 }
