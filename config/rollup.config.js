@@ -1,10 +1,8 @@
 import fs from 'fs';
 import {sync as glob} from 'glob';
 import path from 'path';
-import {promisify} from 'util';
 import tsLoader from 'rollup-plugin-typescript';
 import typescript from 'typescript';
-import {version} from '../package.json';
 
 
 export function all(extension) {

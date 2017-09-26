@@ -4,4 +4,4 @@ import es5 from './rollup.es5';
 import es6 from './rollup.es6';
 
 
-export default [].concat(cjs, es5, es6, demo);
+export default [].concat(cjs, es5, es6); //, demo);
