@@ -7,6 +7,5 @@ describe('log component', () => {
 
   describe('#function method', () => {
     it('should return a function');
-    
-  })
+  });
 });

@@ -1,18 +1,9 @@
 /**
  * Copyright (c) 2017-present A. Matías Quezada <amatiasq@gmail.com>
  */
-import { IConstructor } from './constructor';
 import Logger from './logger';
-import FakeConsole, { IFakeConsole } from './fake-console';
-import { ILogger, ILoggerOptions } from './logger';
+import FakeConsole from './fake-console';
 
-
-export {
-  IFakeConsole,
-  IConstructor,
-  ILogger,
-  ILoggerOptions,
-};
 
 export default Logger({
   createConsole({singleLine, indentation}) {
