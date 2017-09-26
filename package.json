@@ -43,21 +43,25 @@
     "url": "https://github.com/amatiasq/amq-tools/issues"
   },
   "devDependencies": {
-    "@types/jest": "^20.0.5",
+    "@bubltechnology/customizable-commit-analyzer": "^1.0.2-0",
+    "@types/jest": "^21.1.1",
     "coveralls": "^2.13.1",
-    "jest": "^20.0.4",
-    "rollup": "^0.45.1",
+    "jest": "^21.1.0",
+    "rollup": "^0.50.0",
     "rollup-plugin-typescript": "^0.8.1",
     "rollup-plugin-uglify": "^2.0.1",
     "rollup-watch": "^4.3.1",
-    "ts-jest": "^20.0.7",
-    "ts-loader": "^2.2.2",
-    "tslint": "^5.5.0",
+    "semantic-release": "^8.0.3",
+    "ts-jest": "^21.0.1",
+    "ts-loader": "^2.3.7",
+    "tslint": "^5.7.0",
     "tslint-language-service": "^0.9.6",
-    "typescript": "^2.4.1",
-    "webpack": "^3.2.0",
-    "webpack-dev-server": "^2.5.1",
-    "semantic-release": "^8.0.0"
+    "typescript": "^2.5.2",
+    "webpack": "^3.6.0",
+    "webpack-dev-server": "^2.8.2"
+  },
+  "release": {
+    "analyzeCommits": "@bubltechnology/customizable-commit-analyzer"
   },
   "homepage": "https://github.com/amatiasq/amq-tools#readme"
 }
