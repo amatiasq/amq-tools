@@ -31,7 +31,7 @@
     "lint-fix": "tslint -c tslint.json --type-check --project tsconfig.json --fix 'src/**/*.ts'",
     "copyright": "./scripts/copyright.js --extension ts src",
     "deploy": "npm run build && ./scripts/deploy.sh",
-    "semantic-release": "semantic-release pre && ./scripts/deploy.sh && semantic-release post"
+    "semantic-release": "semantic-release pre && npm run deploy && semantic-release post"
   },
   "repository": {
     "type": "git",
