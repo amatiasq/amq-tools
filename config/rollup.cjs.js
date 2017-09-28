@@ -1,7 +1,9 @@
 import {all} from './rollup.config';
 
 export default all(entry => ({
-  dest: entry.dest.replace('dist/', 'dist/cjs/'),
-  format: 'cjs',
-  tsconfig: {target: 'es5'}
+  tsconfig: {target: 'es5'},
+  output: {
+    file: entry.output.file.replace('dist/', 'dist/cjs/'),
+    format: 'cjs',
+  },
 }))

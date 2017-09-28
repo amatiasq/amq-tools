@@ -10,10 +10,12 @@ export default libsConf.concat(utilsConf);
 
 function store(namespace) {
   return entry => ({
-    dest: entry.dest.replace('dist/', 'dist/web/'),
-    format: 'iife',
     footer: globalStore([ ...namespace, entry.moduleName ]),
-    tsconfig: {target: 'es5'}
+    tsconfig: {target: 'es5'},
+    output: {
+      file: entry.output.file.replace('dist/', 'dist/web/'),
+      format: 'iife',
+    },
   });
 }
 

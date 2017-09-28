@@ -14,9 +14,11 @@ export function libs(extension = x => x) {
   return fs.readdirSync('src')
     .filter(entry => entry !== 'util')
     .map(entry => ({
-      moduleName: capitalize(entry),
-      entry: `src/${entry}/index.ts`,
-      dest: `dist/${entry}.js`,
+      name: capitalize(entry),
+      input: `src/${entry}/index.ts`,
+      output: {
+        file: `dist/${entry}.js`,
+      },
     }))
     .map(extend(extension))
     .map(build);
@@ -27,9 +29,11 @@ export function utils(extension = x => x) {
   return glob('src/util/**/*.ts')
     .map(entry => entry.substr('src/'.length))
     .map(entry => ({
-      moduleName: capitalize(path.basename(entry, '.ts')),
-      entry: `src/${entry}`,
-      dest: `dist/${withoutExtension(entry, '.ts')}.js`,
+      name: capitalize(path.basename(entry, '.ts')),
+      input: `src/${entry}`,
+      output: {
+        file: `dist/${withoutExtension(entry, '.ts')}.js`,
+      },
     }))
     .map(extend(extension))
     .map(build);
