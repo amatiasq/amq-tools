@@ -56,7 +56,7 @@ const types = Object.keys(cases);
 /**
  * Transforms a identifier between different cases.
  */
-function caseConverter(value: string, output: Type) {
+export default function caseConverter(value: string, output: Type) {
   const sourceName = types.find(key => cases[key].detector.test(value));
   const source = cases[sourceName];
   const dest = cases[output];
@@ -65,5 +65,5 @@ function caseConverter(value: string, output: Type) {
 }
 
 
-type Type = 'CAMEL_CASE' | 'PASCAL_CASE' | 'UPPER_CASE';
+export type Type = 'CAMEL_CASE' | 'PASCAL_CASE' | 'UPPER_CASE';
 type Conversor = (text: string, find: RegExp) => string;

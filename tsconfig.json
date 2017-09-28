@@ -11,11 +11,9 @@
     "stripInternal": true,
     "noImplicitAny": true,
 
-    "module": "es2015",
-    "target": "es6",
-    "lib": ["dom", "es2015"],
-    "plugins": [
-      {"name": "tslint-language-service"}
-    ]
+    "lib": [ "dom", "es2015" ],
+    "plugins": [{
+      "name": "tslint-language-service"
+    }]
   }
 }
