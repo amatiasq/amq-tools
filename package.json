@@ -2,6 +2,7 @@
   "name": "amq-tools",
   "description": "Set of Javascript/Typescript utilities",
   "main": "dist/index.js",
+  "version": "2.1.0",
   "directories": {
     "test": "test"
   },
