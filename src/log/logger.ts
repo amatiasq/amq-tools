@@ -177,7 +177,7 @@ export default function Logger({
 
 
   function omit<T>(instance: T | Function, key: keyof T, descriptor: PropertyDescriptor) {
-    omitList.add(arguments.length === 1 ? descriptor.value : instance);
+    omitList.add(arguments.length === 1 ? instance : descriptor.value);
     return descriptor;
   }
 
